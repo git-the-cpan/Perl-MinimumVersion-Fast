@@ -1,0 +1,73 @@
+Revision history for Perl extension Perl-MinimumVersion-Fast
+
+0.15 2014-10-29T05:57:40Z
+    - Support push($arrayref, ...) and the likes
+      (Reported by apocalypse++, with help from moznion++)
+
+0.14 2014-03-26T02:59:38Z
+
+    - You can use mro.pm with Perl 5.8!
+      There is MRO::Compat.
+
+0.13 2014-03-25T05:42:43Z
+
+    - Added workaround for `if (//) { }`
+
+0.12 2014-03-25T05:39:29Z
+
+    - Detects empty regex as defined-or #7
+      (Reported by dagolden++)
+
+0.11 2013-06-25T08:03:05Z
+
+    - Supoprt Compiler::Lexer 0.13
+      (tokuhirom)
+
+0.10 2013-05-29T08:24:23Z
+
+    - removed debugging stmt.
+
+0.09 2013-05-29T05:41:09Z
+
+    - Support /(each|values|keys) (@array|$ref)/.
+      (suggested by hanekomu++)
+
+0.08 2013-05-27T23:13:16Z
+
+    - Detect version from the 'use feature' args.
+      (tokuhirom)
+
+0.07 2013-05-26T10:15:03Z
+
+    - Fixed postfix when detection
+      https://github.com/tokuhirom/Perl-MinimumVersion-Fast/issues/3
+      (Reported by bowtie++)
+
+0.06 2013-05-23T09:54:19Z
+
+    - Compiler::Lexer 0.06 supports v-string.
+
+0.05 2013-05-23T06:55:54Z
+
+    - Support 'package NAME BLOCK' syntax, introduced from 5.14.
+      (tokuhirom)
+
+0.04 2013-05-22T11:07:53Z
+
+    - Suppress warnings
+      (tokuhirom)
+
+0.03 2013-05-22T10:11:34Z
+
+    - Suppress warnings
+      (tokuhirom)
+
+0.02 2013-05-22T09:56:41Z
+
+    - Added minimum_explicit_version, minimum_syntax_version, version_markers.
+      (tokuhirom)
+
+0.01 2013-05-22T05:25:17Z
+
+    - original version
+
