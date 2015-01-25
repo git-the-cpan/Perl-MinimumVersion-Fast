@@ -5,12 +5,13 @@ use warnings;
 
 use version ();
 
-use Compiler::Lexer 0.13;
+use Compiler::Lexer 0.19;
 use List::Util qw(max);
 
-our $VERSION = "0.15";
+our $VERSION = "0.17";
 
 my $MIN_VERSION   = version->new('5.008');
+my $VERSION_5_020 = version->new('5.020');
 my $VERSION_5_018 = version->new('5.018');
 my $VERSION_5_016 = version->new('5.016');
 my $VERSION_5_014 = version->new('5.014');
@@ -48,9 +49,9 @@ sub _build_minimum_explicit_version {
     my $explicit_version;
     for my $i (0..@tokens-1) {
         if ($tokens[$i]->{name} eq 'UseDecl' || $tokens[$i]->{name} eq 'RequireDecl') {
-            if (@$tokens >= $i+1) {
+            if (@tokens >= $i+1) {
                 my $next_token = $tokens[$i+1];
-                if ($next_token->{name} eq 'Double') {
+                if ($next_token->{name} eq 'Double' or $next_token->{name} eq 'VersionString') {
                     $explicit_version = max($explicit_version || 0, version->new($next_token->{data}));
                 }
             }
@@ -190,6 +191,8 @@ sub _build_minimum_syntax_version {
                     }
                 }
             }
+        } elsif ($token->{name} eq 'PostDeref' || $token->{name} eq 'PostDerefStar') {
+			$test->("postfix dereference" => $VERSION_5_020);
         }
     }
     return $syntax_version;

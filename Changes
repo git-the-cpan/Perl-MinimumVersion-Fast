@@ -1,5 +1,25 @@
 Revision history for Perl extension Perl-MinimumVersion-Fast
 
+0.17 2015-01-25T20:17:50Z
+
+0.17 2015-01-25T10:32:00Z
+
+    - Add 5.20 support to recognize postfix dereferencing
+
+0.16 2015-01-22T10:31:00Z
+
+    commit 44553ef0c4bdbfb7e85052bdcdaab161c80b2c59
+    Author: brian d foy <brian.d.foy@gmail.com>
+    Date:   Wed Jan 14 06:29:41 2015 -0500
+
+        I think you meant the processed @tokens, not the one passed in
+
+    commit f5031ab2819aa1a094d0a05d4b972e1cb9b83c1e
+    Author: brian d foy <brian.d.foy@gmail.com>
+    Date:   Wed Jan 14 04:53:28 2015 -0500
+
+        The next token might be VersionString
+
 0.15 2014-10-29T05:57:40Z
     - Support push($arrayref, ...) and the likes
       (Reported by apocalypse++, with help from moznion++)
